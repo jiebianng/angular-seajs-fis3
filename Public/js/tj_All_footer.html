@@ -1,0 +1,48 @@
+<footer class="l_dbft">
+    <dl>
+        <a href="index.html">
+            <dt>
+                <img src="Public/images/10.png" alt="" class="img1"/>
+                <img src="Public/images/101.png" alt="" class="img2"/>
+            </dt>
+            <dd>主页</dd>
+        </a>
+    </dl>
+    <dl>
+        <a href="classify.html">
+            <dt>
+                <img src="Public/images/11.png" alt="" class="img1"/>
+                <img src="Public/images/111.png" alt="" class="img2"/>
+            </dt>
+            <dd>分类</dd>
+        </a>
+    </dl>
+    <dl>
+        <a href="shopCar.html">
+            <dt>
+                <img src="Public/images/12.png" alt="" class="img1"/>
+                <img src="Public/images/121.png" alt="" class="img2"/>
+            </dt>
+            <dd>购物车</dd>
+        </a>
+    </dl>
+    <dl>
+        <a href="personal.html">
+            <dt>
+                <img src="Public/images/13.png" alt="" class="img1"/>
+                <img src="Public/images/131.png" alt="" class="img2"/>
+            </dt>
+            <dd>个人中心</dd>
+        </a>
+    </dl>
+</footer>
+<script type="text/javascript">
+    /**
+     *
+     * _foot_cur 1代表“首页”、2“广场”、3“服务”、4“分类”、5“个人中心”
+     *
+     */
+    var _foot=$('.templates_Footer');
+    var _foot_cur =parseInt(_foot.attr("data-current"));
+    _foot.find(".l_dbft dl").eq(_foot_cur-1).addClass("active");
+</script>

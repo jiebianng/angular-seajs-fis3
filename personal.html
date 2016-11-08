@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta http-equiv="pragma" content="no-cache"  />
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="color_body"  ng-app="myApp" ng-controller="AppControl" >
+<!--处理加载状态 start-->
+<div id="PageLoadingState" style="position: fixed;top: 0;left: 0;background-color: #fff;width: 100%;z-index: 99999999;text-align: center;">
+    <div style="display: table;width: 100%;height: 100%;">
+        <div style="display: table-cell;vertical-align: middle;">
+            <img src="Public/images/tj_all_loadfile.gif" alt="" width="30%"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var he = document.documentElement.clientHeight;//高
+    var _id = document.getElementById('PageLoadingState');
+    _id.style.height=he+'px';
+    document.onreadystatechange=function(){
+        if(document.readyState=='complete'){
+            document.getElementById('PageLoadingState').style.display='none';
+        }
+    }
+</script>
+<!--处理加载状态 end-->
+<!--正文 start-->
+<div style="padding-bottom: 10rem">
+    <div class="r_userHead">
+        <span>
+            <img err-src="Public/images/error.jpg" img-src="{{objs.object.weixinHeadimg}}">
+        </span>
+        <p ng-bind="objs.object.memberNickName"></p>
+    </div>
+    <div class="r_twoDiv">
+        <a href="MyKeep.html"><div class="r_keep">
+            <img src="Public/images/iconfont-wodeshoucang.png">&nbsp;&nbsp;我的收藏
+        </div></a>
+        <a href="shopCar.html">
+            <div class="r_shopCar">
+                <img src="Public/images/iconfont-gouwuche.png">&nbsp;&nbsp;我的购物车
+            </div>
+        </a>
+    </div>
+    <div class="r_user_orderStatus">
+        <table>
+            <tr>
+                <td>
+                    <a href="myorder.html?PTopage=1">
+                        <img src="Public/images/iconfont-daifukuan.png">
+                        <p>待付款</p>
+                    </a>
+                </td>
+                <td>
+                    <a href="myorder.html?PTopage=2">
+                        <img src="Public/images/iconfont-daifahuo.png">
+                        <p>待发货</p>
+                    </a>
+                </td>
+                <td>
+                    <a href="myorder.html?PTopage=3">
+                        <img src="Public/images/iconfont-daishouhuo.png">
+                        <p>待收货</p>
+                    </a>
+                </td>
+                <td>
+                    <a href="myorder.html?PTopage=4">
+                        <img src="Public/images/iconfont-daipingjia.png">
+                        <p>待评价</p>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="r_my_Info_uls2">
+        <a href="myorder.html">
+            <div style="padding-left: 1rem">
+                <img src="Public/images/iconfont-quanbudingdan.png">
+                <span class="r_1">全部订单</span>
+                <img class="r_img1" src="Public/images/iconfont-jinru.png">
+                <span class="r_2">查看全部购买的商品</span>
+            </div>
+        </a>
+    </div>
+    <div class="r_my_Info_uls3">
+        <div class="r_my_Info_uls2">
+            <a href="zuijinliulan.html">
+                <div>
+                    <img src="Public/images/iconfont-zuijinliulan.png">
+                    <span class="r_1">最近浏览</span>
+                    <img class="r_img1" src="Public/images/iconfont-jinru.png">
+                    <span class="r_2">浏览历史</span>
+                </div>
+            </a>
+        </div>
+        <div class="r_my_Info_uls2">
+            <a href="AddList.html">
+                <div>
+                    <img src="Public/images/iconfont-shouhuodizhiguanli.png">
+                    <span class="r_1">收货地址管理</span>
+                    <img class="r_img1" src="Public/images/iconfont-jinru.png">
+                    <span class="r_2">管理我的收货地址</span>
+                </div>
+            </a>
+        </div>
+        <div class="r_my_Info_uls2">
+            <a href="about.html">
+                <div>
+                    <img src="Public/images/iconfont-guanyuwomen.png">
+                    <span class="r_1">关于我们</span>
+                    <img class="r_img1" src="Public/images/iconfont-jinru.png">
+                    <span class="r_2">关于西昌智慧旅游节</span>
+                </div>
+            </a>
+        </div>
+        <div class="r_my_Info_uls2" >
+            <a href="Feedback.html">
+                <div style="border-bottom: none!important;">
+                    <img src="Public/images/iconfont-yijianfankui.png">
+                    <span class="r_1">意见反馈</span>
+                    <img class="r_img1" src="Public/images/iconfont-jinru.png">
+                    <span class="r_2">提出您的宝贵意见</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--正文 end-->
+<!--底部导航栏 start-->
+<div class="templates_Footer" data-current="4" data-template="tj_All_footer"></div>
+<!--底部导航栏 end-->
+<script type="text/javascript" src="Public/js/sea.js"></script>
+<script type="text/javascript" src="Public/js/seajs-css.js"></script>
+<script type="text/javascript" src="Public/js/config.js"></script>
+<script type="text/javascript">
+    seajs.use("userInfo",function(temp){
+        temp.userInfo();
+    });
+</script>
+</body>
+</html>

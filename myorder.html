@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="pragma" content="no-cache"  />
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body ng-app="myApp" ng-controller="AppControl" style="background-color: #efefef;">
+<!--处理加载状态 start-->
+<div id="PageLoadingState" style="position: fixed;top: 0;left: 0;background-color: #fff;width: 100%;z-index: 99999999;text-align: center;">
+    <div style="display: table;width: 100%;height: 100%;">
+        <div style="display: table-cell;vertical-align: middle;">
+            <img src="Public/images/tj_all_loadfile.gif" alt="" width="30%"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var he = document.documentElement.clientHeight;//高
+    var _id = document.getElementById('PageLoadingState');
+    _id.style.height=he+'px';
+    document.onreadystatechange=function(){
+        if(document.readyState=='complete'){
+            document.getElementById('PageLoadingState').style.display='none';
+        }
+    }
+</script>
+<!--处理加载状态 end-->
+
+<!--头部返回-->
+<div class="All_TopHead">
+    <div class="headDIV">
+        <a href="javascript:history.go(-1)"><img src="Public/images/iconfont-back.png"></a>
+        <span>我的订单</span>
+    </div>
+</div>
+<!--头部返回 end-->
+
+<div class="tj_all_swiperContainer">
+    <ul class="tj_all_pagination">
+
+    </ul>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="tj_all_orderCon" ng-repeat="obj in objs1">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待付款</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <a style="display: none" href="javascript:void(0)" class="VsBtn">联系卖家</a>
+                    <a href="javascript:void(0)" class="VsBtn hideThisLi" ng-click="operateOrder(obj.id,$index,3,2)">取消订单</a>
+                    <a href="javascript:void(0)" class="VsBtn color1 tj_all_topPay" ng-click="Topayclick(obj.orderCode)">去支付</a>
+                </div>
+            </div>
+            <div class="tj_all_orderCon" ng-repeat="obj in objs2">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待发货</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <a href="javascript:void(0)" class="VsBtn" ng-click="operateOrder(obj.id,$index,4,3)">申请退款</a>
+                    <a href="javascript:void(0)" style="display:none;" class="VsBtn color1">提醒发货</a>
+                </div>
+            </div>
+            <div class="tj_all_orderCon" ng-repeat="obj in objs3">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待收货</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <a style="display: none" href="javascript:void(0)" class="VsBtn">联系卖家</a>
+                    <a href="http://m.kuaidi100.com/index_all.html?type={{obj.logisticsCompany}}&postid={{obj.logisticsCode}}&callbackurl=javascript:history.go(-1)#myOrder.html?PTopage=3" class="VsBtn">查看物流</a>
+                    <a href="javascript:void(0)" ng-click="operateOrder(obj.id,$index,2,4)" class="VsBtn color1 hideThisLi">确认收货</a>
+                </div>
+            </div>
+            <div class="tj_all_orderCon" ng-repeat="obj in objs4">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待评价</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <a style="display: none" href="javascript:void(0)" class="VsBtn">联系卖家</a>
+                    <a style="display: none" href="javascript:void(0)" class="VsBtn">申请退货</a>
+                    <a href="javascript:void(0)" class="VsBtn hideThisLi" ng-click="operateOrder(obj.id,$index,1,5)">删除订单</a>
+                    <a href="pingjia.html?orderID={{obj.id}}" class="VsBtn color1">去评价</a>
+                </div>
+            </div>
+
+            <div class="tj_all_orderCon" ng-repeat="obj in objs5">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">申请退款</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+            </div>
+
+            <div class="tj_all_orderCon" ng-repeat="obj in objs6">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">退款完成</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <!--<a href="javascript:void(0)" class="VsBtn hideThisLi" ng-click="operateOrder(obj.id,$index,3,2)">取消订单</a>-->
+                    <!--<a href="javascript:void(0)" class="VsBtn hideThisLi" ng-click="operateOrder(obj.id,$index,1,5)">删除订单</a>-->
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="tj_all_orderCon" ng-repeat="obj in objs.rows">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待付款</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <a style="display: none" href="javascript:void(0)" class="VsBtn">联系卖家</a>
+                    <a href="javascript:void(0)" class="VsBtn hideThisLi" ng-click="operateOrder(obj.id,$index,3,1)">取消订单</a>
+                    <a href="javascript:void(0)" class="VsBtn color1 tj_all_topPay" ng-click="Topayclick(obj.orderCode)">去支付</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="tj_all_orderCon" ng-repeat="obj in objs.rows">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待发货</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <a href="javascript:void(0)" class="VsBtn" ng-click="operateOrder(obj.id,$index,4,1)">申请退款</a>
+                    <a href="javascript:void(0)" style="display:none;" class="VsBtn color1">提醒发货</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="tj_all_orderCon" ng-repeat="obj in objs.rows">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待收货</div>
+                    </div>
+                    <ul class="ul">
+                        <li ng-repeat="ob in obj.detailList">
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                </a>
+                <div class="orderBtn">
+                    <a style="display: none" href="javascript:void(0)" class="VsBtn">联系卖家</a>
+                    <a href="http://m.kuaidi100.com/index_all.html?type={{obj.logisticsCompany}}&postid={{obj.logisticsCode}}&callbackurl=javascript:history.go(-1)#myOrder.html?PTopage=3" class="VsBtn">查看物流</a>
+                    <a href="javascript:void(0)" ng-click="operateOrder(obj.id,$index,2,1)" class="VsBtn color1 hideThisLi">确认收货</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="tj_all_orderCon" ng-repeat="obj in objs.rows">
+                <a href="orderDetails.html?id={{obj.id}}">
+                    <div class="tj_all_Explain">
+                        <img src="Public/images/tj-icon-orderH2.png" alt="" style="vertical-align: middle;width: 1.3rem;"/>
+                        <span class="span">西昌特产</span>
+                        <div class="fr color1">待评价</div>
+                    </div>
+                    <ul class="ul">
+                        <li  ng-repeat="ob in obj.detailList" >
+                            <div class="tj_Style1">
+                                <div class="ta-cell">
+                                    <img err-src="Public/images/error.jpg" img-src="{{ob.goodsImageUrl}}" alt="" class="img"/>
+                                </div>
+                                <div class="ta-cell wi-1000">
+                                    <h3><span ng-bind="ob.goodsName"></span></h3>
+                                    <p><span ng-bind="ob.goodsUnit"></span></p>
+                                </div>
+                                <div class="ta-cell">
+                                    <p class="color1" ng-bind="ob.goodsMoney|currency:'￥'"></p>
+                                    <p class="te-ri">×{{ob.goodsNum}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </a>
+                <div class="orderLength">共<span class="color1" ng-bind="obj.detailList.length"></span>件商品&numsp;共计 <span class="color1" ng-bind="obj.actualMoney|currency:'￥'"></span></div>
+                <div class="orderBtn">
+                    <a style="display: none" href="javascript:void(0)" class="VsBtn">联系卖家</a>
+                    <a href="javascript:void(0)" style="display: none;" class="VsBtn">申请退货</a>
+                    <a href="javascript:void(0)" class="VsBtn hideThisLi" ng-click="operateOrder(obj.id,$index,1,1)">删除订单</a>
+                    <a href="pingjia.html?orderID={{obj.id}}" class="VsBtn color1">去评价</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="Public/js/sea.js"></script>
+<script type="text/javascript" src="Public/js/seajs-css.js"></script>
+<script type="text/javascript" src="Public/js/config.js"></script>
+<script type="text/javascript">
+    seajs.use("order",function(temp){
+        temp.myOrder();
+    });
+</script>
+</body>
+</html>

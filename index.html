@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="myApp" ng-controller="AppControl">
+<head>
+    <meta http-equiv="pragma" content="no-cache"  />
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <title></title>
+    <!-- Basic Page Needs
+     ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <!-- <meta name="description" content=""> -->
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <!-- IOS6全屏 Chrome高版本全屏
+    ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- 让360双核浏览器用webkit内核渲染页面
+    ================================================== -->
+    <meta name="renderer" content="webkit">
+    <!-- Mobile Specific Metass
+    ================================================== -->
+    <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="pbt-20" style="background: #d1d1d1">
+<!--处理加载状态 start-->
+<div id="PageLoadingState" style="position: fixed;top: 0;left: 0;background-color: #fff;width: 100%;height:100%;z-index: 99999999;text-align: center;">
+    <div style="display: table;width: 100%;height: 100%;">
+        <div style="display: table-cell;vertical-align: middle;">
+            <img src="Public/images/tj_all_loadfile.gif" alt="" width="30%"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.onreadystatechange=function(){
+        if(document.readyState=='complete'){
+            document.getElementById('PageLoadingState').style.display='none';
+        }
+    }
+</script>
+<!--处理加载状态 end-->
+<div class="l_max">
+
+    <div class="l_one">
+        <!-------------------------轮播--------------------------------->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="obj in objs.object" finished1><img style="width: 100%;" err-src="Public/images/error.jpg" img-src="{{obj.imgUrl}}" alt=""/></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-------------------------首页活动导航--------------------------------->
+        <div class="l_hdzq">
+            <table>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <div>
+                                <img src="Public/images/tem2nav-shuiguo.png">
+                                <p>新品上市</p>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <div>
+                                <img src="Public/images/tem2nav-paihangbang.png">
+                                <p>销售排行</p>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <div>
+                                <img src="Public/images/tem2nav-lipin.png">
+                                <p>活动专区</p>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <div>
+                                <img src="Public/images/tem2nav-wuliu.png">
+                                <p>物流查询</p>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-------------------------样式1--------------------------------->
+        <div ng-include="'temp/styleOne.html'"></div>
+    </div>
+</div>
+<!--加载规格样式 start-->
+<div ng-include="'temp/tem_guige.html'"></div>
+<!--加载规格样式 end-->
+<!--底部导航栏 start-->
+<div class="templates_Footer" data-current="1" data-template="tj_All_footer"></div>
+<!--底部导航栏 end-->
+<script type="text/javascript" src="Public/js/sea.js"></script>
+<script type="text/javascript" src="Public/js/seajs-css.js"></script>
+<script type="text/javascript" src="Public/js/config.js"></script>
+<script type="text/javascript">
+    seajs.use(["swiper-css"]);
+    seajs.use("index",function(temp){
+        temp.GoData(1);
+    });
+</script>
+</body>

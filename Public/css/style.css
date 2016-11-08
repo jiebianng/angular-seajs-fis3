@@ -1,0 +1,2396 @@
+/*----------------------全局变量 start--------------------------*/
+*{margin: 0;padding: 0;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,section,p,span,font,div{margin:0;padding:0;outline:0!important;border:0;list-style:none;text-decoration:none;word-break:break-all;}
+body,html{overflow-x:hidden;font-family:"微软雅黑";font-size: 12px;}
+ul{list-style-type:none;margin:0;padding:0;}
+a{text-decoration:none;color:#333;}
+a:active,a:hover,a:link{text-decoration:none;color:#333;}
+img{vertical-align: middle}
+*{-webkit-tap-highlight-color: transparent;box-sizing: border-box;}
+.mb-8{margin-bottom: 5rem;}
+.mb-10{margin-bottom: 10%;}
+.mb-15{margin-bottom: 3rem;}
+.mb-28{margin-bottom: 20%;}
+.mb-32{margin-bottom: 32%;}
+.mt-5{margin-top: 5%;}
+.mt-8{margin-top: 8%;}
+.mt-13{margin-top: 13%;}
+.mt-15{margin-top: 15%;}
+.mt-20{margin-top: 20%;}
+.tj_pa_20{padding: 1.6rem;}
+.tj_pa_15{padding: 1.4rem;}
+.tj_pa_10{padding: 1.2rem;}
+.tj_fl{float: left;}
+.tj_fr{float: right;}
+.tj_ve_top{vertical-align:top;}
+.f_size_2{font-size: 2rem;color: #dc7a10;}
+.f_size_2_line{font-size: 2rem;text-decoration: line-through;}
+.f_size_2_Col{font-size: 2rem;color: #000;}
+.f_size_2N{font-size: 2rem;color: #8e6350;}
+.color_body1{background-color: #d2beaa;}
+.color_body2{background-color: #e2cbb6;}
+.color_body3{background-color: #efefef;}
+.tj_all_poz{position: absolute;top: 0;left: 0;height: 100%;width: 100%;}
+.ta-cell{vertical-align: top;display: table-cell;}
+.wi-100{width: 1000rem;}
+.clearfix:after{content:"";display:block;clear:both;overflow:hidden;visibility:visible;width:0;height:0;}
+
+/*----------------------全局变量 end--------------------------*/
+
+
+/*----------------------------------页面样式（全） start------------------------------------*/
+.All_TopHead{
+    padding-bottom: 3.7rem;
+}
+.headDIV{
+    background: #ff9000;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 1.25rem;
+    color: #fff;
+    z-index: 9999;
+}
+.headDIV img{
+    width: 2rem ;
+    position: absolute;
+    left: 1rem;
+}
+.headDIV .r_clickEdit{
+    position: absolute;
+    right: 1rem;
+}
+.headColor{
+    background: #ff9000;
+}
+.pbt-20{padding-bottom: 4.3rem;}
+.ptp-15{padding-top: 15%}
+.mtp-01{margin-top: -0.1rem}
+/*--------------------- 分类 start ---------------------*/
+.r_contentDiv{
+    width: 100%;
+    overflow: hidden;
+}
+.r_contentDiv .r_shopType{
+    position: fixed;
+    background: #f8f8f8;
+    float: left;
+    width: 25%;
+    height: 70%;
+    overflow-y: auto;
+    padding-bottom: 26%;
+}
+.r_contentDiv .r_shopType li{
+    padding: 0.2rem 0rem;
+    text-align: center;
+    border-bottom: 0.1rem solid #ccc;
+    color: #777;
+    font-size: 1.2rem;
+    border-left: 0.45rem solid #f8f8f8;
+}
+.r_contentDiv .r_shopType li span{
+    padding: 1.5rem 0;
+    display: inline-block;
+    width: 100%;
+}
+a.app_Code {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    color: #0054C2;
+}
+.r_r_shopTypeActive{
+    background: #fff;
+}
+.r_active{
+    border-left: 0.45rem solid #ff9000 !important;
+    background: #fff;
+}
+.r_shop_right_div{
+    /*float: left;*/
+    background: #fff;
+    width: 75%;
+    margin-left: 25%;
+    position: relative;
+}
+.r_shop_right_div .r_name{
+    position: fixed;
+    width: 100%;
+    padding: 0.3rem 1.2rem;
+    font-size: 1.1rem;
+    background: #efefef;
+    padding-top: 0.45rem;
+    z-index: 999;
+}
+.r_shop_right_div ul{
+    padding: 0 0 0 1rem;
+}
+.r_shop_right_div ul li{
+    position: relative;
+    width: 100%;
+    padding:0.5rem;
+    border-bottom: 0.1rem solid #999;
+    overflow: hidden;
+}
+.r_shop_right_div ul li img{
+    float: left;
+    width: 25%;
+}
+.r_shop_right_div ul li .r_shop_info{
+    float: left;
+    width: 75%;
+    padding: 0.3rem 0;
+}
+.r_shop_right_div ul li .r_shop_info p{
+    padding: 0 0 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-family: '微软雅黑';
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.r_shop_right_div ul li .r_shop_info .r_shop_name{
+    width: 10rem;
+    font-size: 1.2rem;
+    /*font-weight: bold;*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.r_shop_right_div ul li .r_shop_info  .r_shop_price{
+    color: #ff9000;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.r_addShopCarpic{
+    width: 5rem;
+    height: 5rem;
+    position: fixed;
+    bottom: 9rem;
+    right: 2rem;
+}
+/*--------------------- 分类 end ---------------------*/
+/*--------------------- 个人中心 start ----------------*/
+.r_userHead{
+    background:url("../images/gerenzhongxingback.jpg")no-repeat;
+    text-align: center;
+    padding: 3.5rem 0 0 0;
+    background-position: center center;
+}
+.r_userHead span{
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 100%;
+    display: inline-block;
+    line-height: 6.5rem;
+}
+.r_userHead span img{
+    width:100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.r_userHead p{
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: "微软雅黑";
+    padding: 1rem 0 1rem 0;
+}
+.r_twoDiv{
+    border-bottom: 0.1rem solid #eaeaea;
+    overflow: hidden;
+}
+.r_twoDiv a:last-child div{
+    border-right: none;
+}
+.r_twoDiv a div{
+    width: 50%;
+    padding: 1.5rem 0;
+    text-align: center;
+    background: #fff;
+    float: left;
+    font-size: 1.25rem;
+    font-family: "微软雅黑";
+    color: #333333;
+    border-right: 0.1rem solid #eaeaea;
+}
+.r_twoDiv div img{
+    width: 2rem;
+    height: 1.8rem;
+    vertical-align: middle;
+}
+.r_user_orderStatus{
+    padding: 1rem 0 0 0;
+    border-top: 0.1rem solid #eaeaea;
+    border-bottom: 0.1rem solid #eaeaea;
+    margin-top: 1rem;
+}
+.r_user_orderStatus table{
+    width: 100%;
+}
+.r_user_orderStatus table td{
+    text-align: center;
+    font-size: 1.25rem;
+}
+.r_user_orderStatus table td img{
+    width: 1.8rem;
+}
+.r_user_orderStatus table td p{
+    padding: 0.5rem 0;
+}
+.r_user_allOrder{
+    padding: 1rem;
+    border-bottom: 0.1rem solid #acacac;
+}
+.r_user_allOrder img{
+    width: 2.8rem;
+    height: 2.8rem;
+    vertical-align: middle;
+}
+.r_user_img{
+    width: 1rem !important;
+    height: 2rem !important;
+    vertical-align: middle;
+    display: table-cell;
+}
+.r_right{
+    float: right;
+}
+
+
+.r_my_Info_uls2 div{
+    font-family: '微软雅黑';
+    font-size: 1.25rem;
+    padding: 1rem 1rem 1rem 0;
+    border-bottom: 0.1rem solid #eaeaea;
+    vertical-align: middle;
+}
+.r_my_Info_uls2 a{
+    color: #000;
+}
+.r_my_Info_uls2 div .r_1{
+    display: inline-block;
+    padding-left: 1rem;
+}
+.r_my_Info_uls2 div .r_2{
+    float: right;
+    padding-right: 1rem;
+    color: #999;
+}
+.r_my_Info_uls2 div img{
+    height: 1.6rem;
+    vertical-align: middle;
+}
+.r_my_Info_uls2 div .r_img1{
+    float: right;
+    height: 1.5rem !important;
+}
+.r_my_Info_uls3{
+    margin-top: 1rem;
+    border-bottom: 0.1rem solid #eaeaea;
+    border-top: 0.1rem solid #eaeaea;
+    padding-left: 1rem
+}
+.r_my_Info_uls3 div{
+    font-family: '微软雅黑';
+    font-size: 1.25rem;
+    vertical-align: middle;
+}
+
+/*--------------------- 个人中心 end ------------------*/
+/*--------------------- 订单板块 start ------------------*/
+
+/*订单板块*/
+.tj_all_pagination{
+    height: 4rem;
+    background-color: #fff;
+    list-style: none;
+    line-height: 4rem;
+}
+.tj_all_pagination li{
+    width: 20%;
+    float: left;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.tj_all_swiperContainer{
+    overflow: hidden;
+    background-color: #efefef;
+}
+.swiper-slide{
+    position: relative;
+}
+.tj_all_swiperContainer .swiper-wrapper{
+    width: 1000rem;
+}
+.tj_all_swiperContainer .swiper-slide{
+    float: left;
+}
+.tj_all_swiperContainer .swiper-pagination-bullet-active{
+    background: none!important;
+    color: #ff9000;
+    height: 4rem;
+    border-bottom: .2rem solid #ff9000;
+}
+.tj_all_Top_5{
+    margin-top: 6rem!important;
+}
+.tj_all_Bot_5{
+    margin-bottom: 5rem!important;
+}
+.tj_all_body-1{
+    background: url("../img/tj-icon-orderback.jpg");
+    background-size: 100%;
+}
+.tj_all_orderCon{
+    margin-top: 1rem;
+    border-top: .1rem solid #eaeaea;
+    border-bottom: .1rem solid #eaeaea;
+    padding:0 1rem;
+    background-color: #fff;
+}
+.tj_all_Explain{
+    position: relative;
+    padding: 1rem 0;
+    height: 4rem;
+    border-bottom: .1rem solid #EEEEEE;
+}
+.tj_all_Explain .span{
+    font-size: 1.2rem;
+    color: #999999;
+}
+.tj_all_Explain .fr{
+    position: absolute;
+    right: 0;
+    top: 1.1rem;
+    font-size: 1.3rem;
+}
+.tj_all_Explain .color1{
+    color: #ff9000;
+}
+.tj_all_Explain .color2{
+    color: #ff9000;
+}
+.tj_all_orderCon .ul{
+    list-style: none;
+    width: 100%;
+}
+.tj_all_orderCon .orderLength{
+    border-top: .1rem solid #EEEEEE;
+    text-align: right;
+    border-bottom: .1rem solid #eaeaea;
+    font-size: 1.3rem;
+    padding: .5rem 0;
+    color: #333;
+}
+.tj_all_orderCon .orderLength .color1{
+    color: #ff9000;
+}
+.tj_all_orderCon .orderLength .color2{
+    color: #c2bac2;
+}
+.tj_all_orderCon .orderBtn{
+    text-align: right;
+}
+.tj_all_orderCon .orderBtn .VsBtn{
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    color: #333333;
+    margin: 1rem 0;
+    padding: .6rem 1rem ;
+    border: .1rem solid #666666;
+    border-radius: .15rem;
+    background-color: #fff;
+}
+.tj_all_orderCon .orderBtn .color1{
+    background-color: #ff9000;
+    border: .1rem solid #ff9000;
+    color: #fff;
+}
+.tj_all_orderCon .ul li{
+    width: 100%;
+    border-bottom: .1rem solid #eaeaea;
+}
+.tj_all_orderCon .ul li:last-child{
+    border-bottom: none;
+}
+.tj_Style1{
+    width: 100%;
+}
+.tj_Style1 .ta-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+.tj_Style1 .te-ri{
+    text-align: right;
+}
+.tj_Style1 .wi-1000{
+    width: 1000rem;
+}
+.tj_Style1 h3{
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #333333;
+    font-weight: 300;
+}
+.tj_Style1 p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #999999;
+}
+.tj_Style1 .color1{
+    color: #ff9000;
+    white-space: nowrap;
+}
+.tj_Style1 .img{
+    margin:.5rem .5rem .5rem 0;
+    width: 5rem;
+}
+.tj_Style2{
+    width: 100%;
+}
+.tj_Style2 .ta-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+.tj_Style2 .te-ri{
+    text-align: right;
+}
+.tj_Style2 .wi-1000{
+    width: 1000rem;
+}
+.tj_Style2 h3{
+    display: block;
+    width: 8rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #333333;
+    padding: 1rem 0;
+    /*font-weight: 600;*/
+}
+.tj_Style2 p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #666666;
+}
+.tj_Style2 .color1{
+    color: #999999;
+}
+.tj_Style2 .color2{
+    color: #ff9000;
+}
+.tj_Style2 .img{
+    margin: 0 .5rem;
+    width: 5rem;
+}
+
+.qrOrderHead{
+    /*margin-top: 1rem;*/
+    border-bottom: 0.1rem solid #f1f1f1;
+    overflow: hidden;
+    padding: 1rem 0;
+    font-family: '微软雅黑';
+    vertical-align: middle;
+    background-color: #fff;
+}
+.qrOrderHead .r_user_add_IMG{
+    width: 1.5rem;
+    float: left;
+    margin-top: 0.5rem;
+    margin-left:0.5rem;
+}
+.qrOrderHead .r_userAddInfo{
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    display: inline-block;
+    color: #818181;
+    width: 80%;
+}
+.r_myAdd{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    display: inline-block;
+    color: #818181;
+    width: 65%;
+    float: left;
+}
+/*--------------------- 订单板块 end ------------------*/
+
+/*---------------------------------商品详情 start-----------------------------------*/
+#mtop{
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+.r_goods_detail_img{
+    overflow: hidden;
+    font-family: '微软雅黑';
+}
+.r_goods_detail_img .goodsPICS{
+    width: 100%;
+    /*height: 20rem;*/
+}
+.r_goods_detail_img .goodsPICS img{
+    width: 100%;
+}
+.r_goodsName{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #454545;
+}
+.r_goods_detail_img p{
+    padding: 0.3rem 0;
+    font-family: '微软雅黑';
+}
+.r_goodsmrak{
+    color: #7e7e7e;
+    width: 65%;
+}
+.r_goods_xianjia{
+    color:#ff9000 ;
+    padding-right: 1rem;
+    font-size: 1.1rem;
+}
+.r_goods_yuanjia{
+    color:#b2b2b2 ;
+    font-size: 1.1rem;
+}
+.r_goods_kEEp{
+    float: right;
+    padding: 0.8rem 2.8rem;
+    border: 0.1rem solid #757575;
+    color: #e36a5c;
+}
+.r_goods_keepTrue{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: block;
+    padding: 0.4rem 1.5rem;
+    border: 0.1rem solid #ff9000;
+    background: #ff9000;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 0.2rem;
+}
+.r_goods_keepTrue img{
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+.r_goods_keepTrue span{
+    display: inline-block;
+    padding-left: 0.5rem;
+}
+.r_goods_cx{
+    font-family: '微软雅黑';
+    background: #e36a5c;
+    color: #fff;
+    font-size: 1.2rem;
+    /*display: inline-table;*/
+    padding: 0.5rem 0.8rem!important;
+    /*padding-right: 0.5rem!important;*/
+    border-radius: 0.2rem;
+}
+.r_goodsDetail3{
+    font-family: '微软雅黑';
+    /*padding: 0 0 5rem 0;*/
+    margin: 0;
+}
+.r_goodsDetail3 li{
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+    border-bottom: 0.1rem solid #f1f1f1;
+}
+.r_goods_ty{
+    padding-right: 2rem;
+}
+.r_goodsGG{
+    color: #979797;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+.r_goodsGGActive{
+    background:#ff9000;
+    color: #fff;
+    border-radius: 0.2rem;
+}
+.r_goodsDetail3 li .cpstart img{
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+.r_goods_starsNum{
+    font-size: 1.3rem;
+    vertical-align: middle;
+    color: #ff9000;
+}
+.r_cppjRightJT{
+    float: right;
+    width: 0.8rem !important;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+.r_goodsDetail3 li:last-child{
+    text-align: center;
+}
+.r_goodsDetail3 li:last-child img{
+    width: 1.5rem;
+    height: 0.8rem;
+    margin-left: 1rem;
+}
+.r_goodsDetail4{
+    font-family: '微软雅黑';
+    padding: .6rem;
+    font-size: 1.2rem;
+    border-top: 0.1rem solid #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    vertical-align: middle;
+    z-index: 99;
+}
+.r_goodsDetail4 img{
+    width: 2.5rem;
+    height: 2.5rem;
+    vertical-align: middle;
+}
+.r_goodsNUm{
+    display: inline-block;
+    width: 2rem;
+    text-align: center;
+}
+.r_goods_shopCar{
+    float: right;
+    background: #ff9000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius:0.2rem;
+}
+.r_goodsDetail5{
+    position: relative;
+}
+.goodsDetailImg img{
+    width: 100% !important;
+}
+.r_goodsDetail5 #backTop{
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    bottom: 20%;
+    right: 15%;
+    display: none;
+}
+
+/*---------------------------------商品详情 end-----------------------------------*/
+
+/*---------------------------------去评价 start-----------------------------------*/
+.r_pjULs li{
+    list-style: none;
+    overflow: hidden;
+    /*height: 8.5rem;*/
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 0.1rem solid #eaeaea;
+}
+.r_pjULs li img{
+    width: 7rem;
+    height: 7rem;
+    float: left;
+
+}
+.r_pjULs li .r_goods_info,.r_goods_NUMinfo{
+    height: 100%;
+    float: left;
+    padding: 2rem 0;
+    margin-left: 1rem;
+}
+.r_pjULs li .r_goods_info p:nth-child(2){
+    color: #c3c3c3;
+}
+.r_goods_NUMinfo{
+    float: right;
+}
+.r_goods_NUMinfo p:first-child{
+    color: #ed2432;
+}
+.shopPingjia table td{
+    text-align: center;
+    border: 0;
+    padding: 1rem 0;
+}
+.shopPingjia table td img{
+    width: 2.5rem;
+    vertical-align: middle;
+}
+.shopStart{
+    padding: 1rem 0;
+}
+.shopStart ul li{
+    list-style: none;
+    display: inline-block;
+}
+.shopStart ul li{
+    margin-left: 1rem;
+}
+.shopStart ul li img{
+    width: 2rem;
+    vertical-align: middle;
+}
+.pjContetn{
+    margin-top: 1rem;
+}
+.pjContetn textarea{
+    width: 100%;
+    resize: none;
+    height: 10rem;
+    border: 0.1rem solid #eaeaea;
+}
+.r_tjpl{
+    position: fixed;
+    padding: 0.8rem 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 0.1rem solid #f1f1f1;
+    border-bottom: 0.1rem solid #f1f1f1;
+    text-align: right;
+    background: #fff;
+}
+.r_tjpl button{
+    padding: 1rem 3rem;
+    background: red;
+    color: #fff;
+    font-family: "微软雅黑";
+    border: 0;
+    margin-right: 1rem;
+}
+.l_xq{
+    background-color: #fff;
+    position: relative;
+    height: 2.5rem;
+    border-top: .1rem solid#acacac;
+    margin-top: 1rem;
+}
+.l_xc{
+    position: absolute;
+    left: 4rem;
+    top: 0.5rem;
+    font-size: 1rem;
+    color: #999999;
+}
+.l_fk{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    color: red;
+}
+.l_pg{
+    width: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 0.5rem;
+}
+.l_mn{
+    display: table-cell;
+    padding-left: 1rem;
+    vertical-align: middle;
+    width: 8rem;
+}
+.l_dls{
+    display: table-cell;
+    vertical-align: middle;
+    width: 15rem;
+}
+
+.l_mns{
+    display: table-cell;
+    vertical-align: middle;
+    width: 30%;
+    text-align: center;
+
+}
+.l_dd li{
+    list-style: none;
+    line-height: 2.5rem;
+}
+.l_dds li{
+    list-style: none;
+    text-align: right;
+    line-height: 2.5rem;
+}
+.l_hmn{
+    background-color: #fff;
+}
+.l_gz{
+    vertical-align: middle;
+    width: 6rem;
+}
+.l_dd li:nth-child(1){
+    font-size: 1.2rem;
+}
+.l_dd li:nth-child(2){
+    font-size: 1.1rem;
+    color: #999;
+}
+.l_dds li:nth-child(1){
+    color: #ed2432;
+    font-size: 1.2rem;
+}
+.l_dds li:nth-child(2){
+    font-size: 1.1rem;
+    color: #999;
+}
+.l_hr{
+    width: 97%;
+    float: right;
+    border-bottom: .1rem solid#acacac;
+}
+
+.l_cler{
+    clear: both;
+}
+.l_hs{
+    padding: 0.5rem 0;
+}
+.l_gj{
+    position: relative;
+    padding: 1.5rem 0rem;
+    text-align: right;
+    padding-right: 1rem;
+    font-size: 1.2rem;
+
+}
+.l_gj1{
+    position: absolute;
+    right: 10rem;
+    top: 0.75rem;
+    font-size: 1.2rem;
+}
+.l_gj2{
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+    color: red;
+    font-size: 1.2rem;
+}
+.l_san{
+    color: red;
+}
+
+.l_lg{
+    padding: 0.5rem 1.5rem;
+    background-color: #fff;
+    color: #333333;
+    border: 0.1rem solid#999;
+    border-radius:0.3rem ;
+
+}
+.l_lg1{
+    padding: 0.5rem 2.042rem;
+    background-color: #ef3946;
+    color: #fff;
+    border: 0.1rem solid red;
+    border-radius:0.3rem ;
+}
+.l_gj5{
+    padding: 1rem 1rem;
+}
+.cl_s{
+    border-bottom: .1rem solid#acacac;
+}
+.l_dds{
+    padding-right:1rem ;
+}
+.l_qb li{
+    list-style: none;
+    width: 20%;
+    text-align: center;
+    float: left;
+}
+.cl_sb{
+    background-color: #fff;
+    padding: 1rem 0rem;
+    height: 3.7rem;
+    font-size: 1.2rem;
+}
+.appBastShow{
+    display: none;
+}
+/*----------------------------去评价 end-------------------------------*/
+.ptp-15{padding-top: 15%}
+.mtp-01{margin-top: -0.1rem}
+/*---------------shouye-------------------*/
+
+.l_ssk{
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+}
+.l_ssk input{
+    width: 80%;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 5rem;
+    padding: 0% 10%;
+}
+.l_ssk img{
+    width: 1.2rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.8rem;
+}
+
+
+
+
+
+.l_hdzq{
+    background: #fff;
+}
+.l_hdzq h4{
+
+    font-weight: normal;
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+.l_hdzq ul{
+    width: 100%;
+    margin: 0 auto;
+}
+.l_hdzq ul li{
+    width: 100%;
+    height: 8rem;
+    margin-top: 0.2rem;
+}
+.l_hdzq ul li img{
+    width: 100%;
+    height: 100%;
+}
+
+/*------------------------------------tem2首页活动导航 Start----------------------------------------*/
+.l_hdzq{
+    background: #fff;
+}
+.l_hdzq table{
+    width: 100%;
+}
+.l_hdzq table td{
+    text-align: center;
+    padding: 0.8rem 0;
+}
+.l_hdzq table a{
+    display: inline-block;
+}
+.l_hdzq table img{
+    width: 60%;
+}
+.l_hdzq table p{
+    padding: 0.5rem 0 0 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+    /*------------------------------------tem2首页活动导航 End----------------------------------------*/
+
+
+
+.l_sp{
+    margin-top: 0.2rem;
+    overflow: hidden;
+}
+.l_sp ul li{
+    background: #fff;
+    width: 48%;
+    float: left;
+    margin: 1%;
+    position:relative;
+    padding: .5rem .5rem 1rem .5rem;
+}
+.l_sptu{
+    position: relative;
+    overflow: hidden;
+    width: 98%;
+    margin: 0 auto;
+}
+.l_sp p{
+    padding: .1rem 0;
+    font-size: 1.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+.l_sptu img{
+    width: 100%;
+}
+body div span.Ssmell{
+    font-size: 1rem;
+}
+body div span.Smoney{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #ff9000;
+}
+body div span.StMoney{
+    font-size: 1.2rem;
+    text-decoration: line-through;
+}
+.l_sp button{
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    width: 4rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.3rem;
+    outline: none;
+    font-size: 1.4rem;
+}
+.l_spmc{
+    width: 96%;
+    margin: 0 auto;
+}
+
+
+/*footer*/
+.l_dbft{
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    box-shadow: 0 0 8px #d6d6d6;
+    height: 4rem;
+}
+.l_dbft dl{
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+}
+.l_dbft dt{
+    width: 2rem;
+    margin: 0 auto;
+    height: 2rem;
+}
+.l_dbft dt img{
+    width: 1.7rem;
+    margin-top: 0.2rem;
+}
+.l_dbft dt .img2{
+    display: none;
+}
+.l_dbft dl.active .img1{
+    display: none;
+}
+.l_dbft dl.active .img2{
+    display: inline-block;
+}
+.l_dbft dl.active dd{
+    color: #ff9000;
+}
+/*footer*/
+/*---------------shouye-------------------*/
+
+/*---------------fenlei----------------*/
+
+.l_fl{
+    width: 100%;
+    overflow: hidden;
+}
+.l_fl_zuo{
+    width: 25%;
+    height: 50rem;
+    background: #e9e9e9;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.l_fl_zuo li{
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+    border-bottom: 0.1rem solid #c1c1c1;
+    font-size: 1.6rem;
+}
+.l_fl_you li{
+    width: 95%;
+    margin: 0 auto;
+    border-bottom:0.1rem solid #c1c1c1;
+    line-height: 1.3rem;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    overflow: hidden;
+}
+.l_fl_you{
+    width: 75%;
+    float: right;
+
+}
+.l_guoguo{
+    width: 42%;
+    height: 6rem;
+}
+.l_guoguo img{
+    width: 100%;
+    height: 100%;
+}
+.l_fl_jq1{
+    margin-top: 0.3rem;
+    color: #b8b8b8;
+}
+.l_fl_jq2{
+    font-size: 1rem;
+    color: red;
+    margin-top: 1.95rem;
+}
+.l_fl_jq{
+    float: right;
+    width: 52%;
+}
+.l_guoguo{
+    float: left;
+}
+.l_fl_jq h5{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+.l_fl_jq p{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem;
+
+
+}
+.l_flbt{
+    background: #cccccc;
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: 0.3rem;
+    width: 75%;
+    position: fixed;
+}
+
+/*---------------fenlei----------------*/
+/*---------------gwc----------------*/
+.l_gyh{
+    text-align: center;
+    margin-top: 10rem;
+    line-height: 1.8rem;
+}
+.l_gwc{
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+}
+.l_gwc img{
+    width: 100%;
+    height: 100%;
+}
+.l_tyt h4{
+    font-weight: normal;
+    font-size: 1.6rem;
+}
+.l_tyt p{
+    color: #959595;
+    font-size: 1.4rem;
+}
+.l_tyt span{
+    padding: 0.3rem 3rem 0.3rem 3rem;
+    border: 0.1rem solid #959595;
+    border-radius:0.5rem ;
+    margin-top: 0.5rem;
+    display: inline-block;
+
+}
+/*--------------gwcft---------------*/
+.l_dbft1{
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    box-shadow: 0px 40px 40px 20px;
+    overflow: hidden;
+    height: 4rem;
+
+}
+.l_dbft1 p{
+    float: left;
+    margin-left: 1rem;
+    line-height: 4rem;
+    font-size: 1.4rem;
+}
+.l_tdj{
+    float: right;
+    margin-right: 1rem;
+    height: 2rem;
+    margin-top: 1rem;
+    line-height: 2rem;
+    border-radius: 5rem;
+    padding: 0rem 2.5rem;
+    border: 1px solid#cccccc;
+    font-size: 1.4rem;
+}
+/*--------------gwcft---------------*/
+/*---------------gwc----------------*/
+
+/*---------gerenzhongxin------------*/
+.l_gr_bj{
+    background: #e81600;
+    height: 8rem;
+
+}
+.l_gr_tx{
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+
+}
+.l_gr_tx img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    margin-top: 1rem;
+}
+.l_gr_s{
+    overflow: hidden;
+    background: #ffffff;
+    margin-top: 1rem;
+    padding: 0.5rem 0rem ;
+}
+.l_gr_s dl{
+    float: left;
+    width: 33.3%;
+    text-align: center;
+}
+.l_gr_s dl dt{
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto;
+}
+.l_gr_s dl dt img{
+    width: 100%;
+    height: 100%;
+}
+.l_gr_s dl dd{
+    font-size: 1.4rem;
+    margin-top: 0.1rem;
+}
+.l_mpsc{
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+
+}
+.l_mpsc p{
+    background: #fff;
+    width: 49.8%;
+    float: left;
+    text-align: center;
+    padding: 0.5rem 0rem;
+    border-bottom: 0.1rem solid#cccccc;
+}
+.l_mpsc img{
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+}
+.l_mpsc span{
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    font-size: 1.6rem;
+}
+.l_cfbg{
+    background: #fff;
+    border-top: 0.1rem solid#cccccc;
+    border-bottom: 0.1rem solid#cccccc;
+    height: 3rem;
+    position: relative;
+}
+.l_gr_qb{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.4rem;
+}
+.l_gr_qb img{
+    width: 100%;
+    height: 100%;
+}
+.you{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.6rem;
+}
+.you img{
+    width: 100%;
+    height: 100%;
+}
+.l_wz{
+    font-size: 1.6rem;
+    position: absolute;
+    left: 3rem;
+    top: 0.5rem;
+}
+.l_wz1{
+    font-size: 1.5rem;
+    position: absolute;
+    right: 2.5rem;
+    top: 0.6rem;
+    color: #cecece;
+}
+
+/*---------gerenzhongxin------------*/
+/*--------------------shangpingxiangqing--------------------------*/
+
+
+.l_spxq{
+    position: relative;
+    padding: 0.5rem;
+    border-bottom:0.1rem solid #cccccc;
+    font-size: 1.6rem;
+}
+.l_tct{
+    text-align: center;
+    font-size: 1.4rem;
+    background: #e5e5e5;
+}
+.l_xq_sc1 p{
+    font-size: 1.6rem;
+}
+
+.l_xq_sc{
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+}
+.l_xq_sc img{
+    width: 100%;
+    height: 100%;
+}
+.l_xq_sc1{
+    position: absolute;
+    right: 0.5rem;
+    top: 1.2rem;
+}
+.l_xq_sc2{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+
+}
+.l_xq_sc2s{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.6rem;
+}
+.l_xq_sc3{
+    position: absolute;
+    right: 5rem;
+    top: 0.6rem;
+}
+.l_xq_sc5{
+    position: absolute;
+    right: 2.4rem;
+    top: 0.5rem;
+    font-size: 1.6rem;
+}
+.l_sp_jg{
+    color:red;
+    margin-top: 0.5rem;
+    font-size: 1.6rem;
+}
+.l_sp_xx{
+    color: #909090;
+    font-size: 1.6rem;
+}
+.l_xqsc4{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.l_xqsc4 img {
+    width: 100%;
+    height: 100%;
+}
+.you1{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.you1 img{
+    width: 100%;
+    height: 100%;
+}
+
+.l_qx_spt img{
+    width: 100%;
+}
+
+.l_spxqft{
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    box-shadow: 0px 40px 40px 20px;
+    height: 3.125rem;
+    overflow: hidden;
+}
+.l_rtw{
+    position: relative;
+    line-height:3.125rem ;
+}
+.l_rtw p{
+    margin-left: 0.2rem;
+    font-size: 1.6rem;
+}
+.l_rtw1{
+    position: absolute;
+    left: 3.5rem;
+    top: 0.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.l_rtw1 img{
+    width: 100%;
+    height: 100%;
+}
+.l_rtw2{
+    position: absolute;
+    left: 5rem;
+    top: 0.1rem;
+    width: 2rem;
+    height: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.l_rtw2 img{
+    width: 100%;
+    height: 100%;
+}
+.l_rtw3{
+    position: absolute;
+    left: 7rem;
+    top: 0.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.l_rtw3 img{
+    width: 100%;
+    height: 100%;
+}
+.l_bton{
+    position: absolute;
+    right: 0.2rem;
+    top: 0;
+}
+.l_bton button{
+    border: none;
+    border-radius:5rem ;
+    padding:0.3rem 0.5rem 0.3rem 0.5rem;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+/*--------------------shangpingxiangqing--------------------------*/
+/*-----------------pingjia------------------------*/
+
+.l_pj{
+    width: 94%;
+    margin: 0 auto;
+    border-bottom:0.1rem solid #cccccc ;
+    overflow: hidden;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+
+}
+.l_pj_sx{
+    width: 5rem;
+    height: 5rem;
+    float: left;
+}
+.l_pj_sx img{
+    width: 100%;
+    height: 100%;
+}
+.l_pj_sx2{
+    float: left;
+    padding-left: 0.5rem;
+    line-height: 1.5rem;
+    width: 70%;
+
+}
+.l_pj_sx2 h4{
+    font-size: 1rem;
+}
+.l_pj_sx2 span{
+    font-size: 0.9rem;
+}
+.l_pj_sx2 p{
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+.l_hzcp ul li{
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+.l_hzcp ul{
+    overflow: hidden;
+}
+.l_hzcp ul li img{
+    vertical-align: middle;
+}
+.l_hzcp ul li span{
+    vertical-align: middle;
+}
+.l_xingxing{
+    width: 2rem;
+    height: 2rem;
+}
+.l_xingxing img{
+    width: 100%;
+    height: 100%;
+}
+.l_xixn ul li{
+    float: left;
+}
+.l_xixn{
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+
+.l_pj_wb{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    margin-top: 1rem;
+}
+.l_pj_wb textarea{
+    width: 90%;
+    outline: none;
+}
+
+
+.l_pj_tj{
+    height: 3.125rem;
+    line-height: 3.125rem;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    box-shadow: 0px 40px 40px 20px;
+    text-align: right;
+}
+.l_pj_tj button{
+    width: 7rem;
+    height: 2rem;
+
+    border: none;
+    margin-right: 0.5rem;
+    outline: none;
+}
+
+/*-----------------pingjia------------------------*/
+/*--------------yst--------------------*/
+.l_yst_b{
+    overflow: hidden;
+}
+.l_yst_tus{
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    padding:.5rem;
+    margin: .5rem 0;
+}
+.l_yst_tu{
+    width: 45%;
+    float: left;
+}
+
+.l_yst_tu img{
+    width: 100%;
+    height: 100%;
+}
+.l_yst_tu1{
+    min-height: 5rem;
+    width:50%;
+    float: right;
+}
+.l_yst_tu1 li{
+    line-height: 1.5rem;
+}
+.l_yst_tu1 li span{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+.l_yst_tu1 h4{
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: .5rem;
+}
+.l_yst_tu1 p{
+    font-size: 1.2rem;
+    color: #676767;
+}
+.l_yst_tu2{
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+
+    width: 2rem;
+    height: 2rem;
+}
+.l_yst_tu2 img{
+    width: 100%;
+    height: 100%;
+}
+.l_yst_dw{
+    position: absolute;
+    bottom:0.5rem;
+}
+/*-----------------ysr---------------*/
+.l_ysr_tu2{
+    width: 100%;
+}
+.l_ysr_tu2 img{
+    width: 100%;
+    height: 100%;
+}
+.l_ysr_tu3{
+    line-height: 1.5rem;
+    padding: 0.2rem;
+}
+.l_ysr_tu3 h4{
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin: .5rem 0;
+}
+.l_ysr_tu3 p{
+    font-size: 1.4rem;
+}
+.l_ysr_tu3 span{
+    font-size: 1.5rem;
+}
+.l_ysr_tu1{
+    position: relative;
+    background: #ffffff;
+    padding: .5rem;
+    margin: .5rem 0;
+}
+.l_ysr_tu4{
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+}
+.l_ysr_tu4 img{
+    width: 100%;
+    height: 100%;
+}
+.l_ysr_tu div{
+    margin-top: 0.2rem;
+}
+
+/*----------------------------------页面样式（全） end------------------------------------*/
+
+
+/*----------------------------------收货地址 start------------------------------------*/
+
+.TAddressTemplate{
+    width: 100%;
+    padding: 1rem 2%;
+    border-bottom: 1px solid #E6E6E6;
+    background-color: #fff;
+    display: none;
+}
+.TAddressTemplate .ta-cell{
+    display: table-cell;
+    vertical-align: top;
+}
+.TAddressTemplate .va-mi{
+    vertical-align: middle;
+}
+.TAddressTemplate .addressChoose{
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 1px solid #C7C7C7;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+.TAddressTemplate .addressChoose.activetrue{
+    background: url("../images/iconfont-gouxuan.png")no-repeat;
+    background-size: 1.6rem;
+    background-position: 0.2rem;
+    border: 1px solid #029afc;
+    background-color: #029afc;
+}
+.TAddressTemplate .wi-1000{
+    width:100rem;
+}
+.TAddressTemplate .wi-30{
+    width: 3rem;
+}
+.TAddressTemplate .te-le{
+    text-align: left;
+}
+.TAddressTemplate .fl{
+    float: left;
+}
+.TAddressTemplate .fr{
+    float: right;
+}
+.TAddressTemplate .te-ce{
+    text-align: center;
+}
+.TAddressTemplate .addRC{
+    padding: 0 5%;
+    line-height: 2rem;
+}
+.TAddressTemplate .addRC .p1{
+    font-size: 1.2rem;
+}
+.TAddressTemplate .addRC .p2{
+    font-size: 1rem;
+    color: #898989;
+}
+.TAddressTemplate .addRC .p3{
+    font-size: 1.4rem;
+}
+.TAddressTemplate .te-ri{
+    text-align: right;
+}
+.TAddressTemplate .TeGoIn{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    z-index: 999999;
+}
+.TAddressTemplate .TeGoIn li{
+    border-bottom: 1px solid #E6E6E6;
+    padding: 1rem 0;
+}
+.TAddressTemplate .bb-1{
+    border-bottom: 1px solid #E6E6E6;
+}
+.TAddressTemplate .TeGoIn .AdList{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+}
+.TAddressTemplate .TeGoIn .ul{
+    overflow-y: auto;
+}
+.TAddressTemplate .TeGoIn .checkAddBtn{
+    padding: 1rem 0;
+}
+.TAddressTemplate .ChooseAct.activetrue{
+    display: inline-block;
+}
+.TAddressTemplate .AddressBtn{
+    width: 95%;
+    margin: 1.4rem auto;
+    height: 3rem;
+}
+.TAddressTemplate .AddLeBtn{
+    float: left;
+    width: 32%;
+    height: 100%;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: .5rem;
+    background-color: #08bf06;
+}
+.TAddressTemplate .AddRiBtn{
+    float: right;
+    width: 32%;
+    height: 100%;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: .5rem;
+    background-color: #f75c35;
+}
+.updateAddressPopup{
+	display:none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+.upAdPoCon{
+    width: 95%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.TAddressTemplate .upAdPoCon li{
+    width: 100%;
+    border-bottom: 1px solid #E6E6E6;
+    padding: .5rem 1%;
+}
+.TAddressTemplate .upAdPoCon li input{
+    display: inline-block;
+    vertical-align: middle;
+    width: 68%;
+    height: 3.4rem;
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+    color: #8A8A8A;
+}
+.TAddressTemplate .upAdPoCon li textarea{
+    display: inline-block;
+    vertical-align: middle;
+    width: 68%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+}
+.TAddressTemplate .upAdPoCon li label{
+    vertical-align: middle;
+    display: inline-block;
+    width: 7rem;
+    padding: 1rem 0;
+    font-size: 1.3rem;
+}
+.TAddressTemplate .upAdPoCon li.tj_seLInfo{
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+.TAddressTemplate .tj_seLInfo select{
+    margin-bottom: 1.4rem;
+    outline: none;
+    padding: 2rem 0;
+    border: 1px solid #D5D5D5;
+    color: #686868;
+}
+.picker-columns{
+    z-index: 9999999;
+}
+/*----------------------------------收货地址 end------------------------------------*/
+
+
+
+/*----------------------------------弹出层 start------------------------------------*/
+
+#r_mengban{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,.4);
+    z-index: 999999999;
+    display: none;
+}
+#r_mengbanContent{
+    background: #fff;
+    border-radius: 0.5rem;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-family: "微软雅黑";
+}
+.r_tips{
+    float: right;
+    background: none!important;
+    padding: 0!important;
+    color: red;
+    display: none;
+}
+.r_arrText:first-child{
+    border-left: 0.1rem solid #c7c7c7;
+}
+.r_arrText{
+    border-right: 0.1rem solid #c7c7c7;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+.r_arrText:active{
+    background: #eaeaea;
+    color: #5d5d5d;
+}
+#r_mengbanContent ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#r_mengbanContent ul li{
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0;
+}
+#r_mengbanContent ul li p{
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+}
+#r_mengbanContent ul li input{
+    width: 95%;
+    height: 3rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    outline: none;
+    padding-left: 1rem;
+    border: 0.1rem solid #c8c8c8;
+}
+#r_mengbanContent ul li span{
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    float: right;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+}
+#r_mengbanContent ul li #R_cancel{
+    background: silver !important;
+}
+#r_mengbanContent ul li #R_save{
+    background: rgba(233, 0, 0, 0.73) !important;
+    color: #fff;
+}
+#r_mengbanContent img{
+    width: 18rem;
+    height: 18rem;
+}
+
+/*----------------------------------弹出层 end------------------------------------*/
+
+
+
+
+
+/*--------------------- 购物车 start ---------------------*/
+.r_shopCarDiv{
+    /*background: red;*/
+    padding-bottom: 25%;
+    font-size: 1.2rem;
+}
+.r_shopCarDiv ul li{
+    position: relative;
+    border-bottom: 0.1rem solid #f1f1f1;
+    overflow: hidden;
+    height: 8rem;
+    padding: 1rem;
+}
+.r_shopCarDiv ul li .r_shopPic{
+    width: 7rem;
+    height: 100%;
+    float: left;
+    vertical-align: middle;
+}
+.r_shopCarDiv ul li .r_shopCarNum{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 1rem;
+}
+.r_edit{
+    height: 100%;
+}
+.r_shopDel{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 1rem;
+    display: none;
+}
+.r_shopEditImg{
+    text-align: right;
+    width: 8rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.r_shopEditImg img{
+    width: 2rem;
+    height: 2rem;
+    display: none;
+}
+.r_shopGG{
+    color: #8d8d8d;
+    padding: 0.5rem 0;
+}
+.r_xianjia{
+    color: #ff9000;
+    word-break:normal;
+}
+.r_yuanjia{
+    text-decoration:line-through;
+    color: #8d8d8d;
+    word-break:normal;
+}
+.r_shopDetail{
+    width: 10rem;
+    height: 100%;
+    float: left;
+    margin-left: 1rem;
+}
+.r_shopDetail p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.r_shopCarNum{
+    float: right !important;
+    height: 100%;
+    position: relative;
+}
+.r_shopCarNum p{
+    position: absolute !important;
+    bottom: 0rem !important;
+    font-size: 1.5rem;
+}
+.r_shopNUm{
+    display: inline-block;
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+}
+.r_NOeidit{
+    text-align: right;
+    height: 100%;
+    position: relative;
+}
+.r_NOeidit span{
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    font-size: 1.3rem;
+}
+.r_shopCarFooterDiv{
+    padding: 1rem;
+    border-top: 0.1rem solid #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+}
+.r_shopBottomDivLeft{
+    float: left;
+}
+.r_shopBottomDivLeft p:first-child{
+    color: #ff9000;
+    font-size: 1.4rem;
+}
+.r_shopBottomDivLeft p:nth-child(2){
+    font-size: 1.2rem;
+}
+.r_shopBottomDivRight span{
+    padding: 0.5rem 1rem;
+    background: #ff9000;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+}
+.r_quxiaosc{
+    color: #ff9000;
+    display: none;
+}
+/*--------------------- 购物车 end ---------------------*/
+
+/*------------------------------------------------------订单模块（全） Start------------------------------------------------------------*/
+/*------------------------确认订单 Start------------------------------*/
+.Billing_list2s{
+    position: relative;
+    height: 5rem;
+    border-bottom: .1rem solid #eaeaea;
+}
+.Billing_list2s span{
+    position: absolute;
+    left: 1rem;
+    top: 40%;
+    font-size: 1.2rem;
+}
+.Billing_list2s img{
+    position: absolute;
+    right: 1.5rem;
+    top: 35%;
+    width: 0.8rem;
+}
+.Billing_list2s p{
+    position: absolute;
+    right: 5rem;
+    top: 40%;
+    font-size: 1.1rem;
+    color: #7f7f7f;
+}
+/*------------------------确认订单 end------------------------------*/
+/*------------------------支付订单 start------------------------------*/
+.l_aqq{
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 1px solid#efefef;
+    color:#33323a ;
+}
+.l_aq1{
+    width: 2rem;
+    height: 2rem;
+}
+.l_aq2{
+    vertical-align: middle;
+    color: #33323a;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+.l_aw{
+    font-size: 1.2rem;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid#efefef ;
+    color:#33323a ;
+}
+.l_aw3{
+    float: right;
+    color:#ff9000;
+}
+.l_aw2{
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+.l_ae{
+    text-align: center;
+    padding: 1.334rem 1rem;
+    border-bottom: 1px solid#efefef;
+}
+.l_ae2{
+    width: 2rem;
+    height: 2rem;
+}
+.l_ae3{
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+/*------------------------支付订单 end------------------------------*/
+/*------------------------------------------------------订单模块（全） End------------------------------------------------------------*/
+
+
+
+/*----------------------------------选择规格样式 start------------------------------------*/
+
+.themePopCar{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999999;
+}
+.themePopCar .ta-cell{
+    display: table-cell;
+    vertical-align: top;
+}
+.themePopCar .wi-100{
+    width: 100rem;
+}
+.themePopCar .te-ri{
+    text-align: right;
+}
+.themePopCar .te-le{
+    text-align: left;
+}
+.themePopCar .wh-now{
+    white-space: nowrap;
+}
+.themePopCarCon{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+.themePopCarCon .p1{
+    font-size: 1.1rem;
+    margin-left: .5rem;
+}
+.themePopCarCon .p2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fe6602;
+    margin-left: .5rem;
+}
+.themePopCarCon .sp1{
+    font-size: 1rem;
+}
+.themePopCarCon .goodsShow{
+    padding: 1rem;
+    border-bottom: 1px solid #e4e4e4;
+}
+.themePopCarCon .specShow{
+    margin: 0 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e4e4e4;
+}
+.themePopCarCon .specList{
+    margin: .6rem 0 0 0;
+}
+.themePopCarCon .specList li{
+    display: inline-block;
+    position: relative;
+    padding: .8rem 1rem;
+    border: 1px solid #e4e4e4;
+    border-radius: .5rem;
+    margin-bottom: .8rem;
+    margin-right: .5rem;
+}
+.themePopCarCon .specList li.active{
+    border: 1px solid #f05a0d;
+}
+.themePopCarCon .specList li.active:before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left:.8rem solid transparent;
+    border-bottom:.8rem solid #f05a0d;
+    border-top:.8rem solid transparent;
+    border-right:.8rem solid #f05a0d;
+    border-bottom-right-radius: .4rem;
+    border-top-left-radius: 100%;
+}
+.themePopCarCon .specList li.active:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1rem;
+    height: 1rem;
+    background: url("../images/iconfont-gouxuan.png")no-repeat;
+    background-size: 100%;
+    background-position: center center;
+}
+.themePopCarCon .numberShow{
+    padding: 1rem;
+    border-bottom: 1px solid #e4e4e4;
+}
+.themePopCarCon .numberShow .ta-cell{
+    vertical-align: middle;
+}
+/*--------------------数量操作样式 start---------------------*/
+.theControlNum{
+    width: 10.7rem;
+    margin-left: 1rem;
+    text-align: right;
+}
+.theControlNum .input{
+    width: 100%;
+    height: 100%;
+    background:none;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+.theControlNum .le{
+    float: left;
+    width: 3.4rem;
+    height: 3rem;
+    line-height: 2.7rem;
+    text-align: center;
+    border: 1px solid #999999;
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    font-size: 2.5rem;
+}
+.theControlNum .mi{
+    float: left;
+    width: 3.4rem;
+    height: 3rem;
+    line-height: 2rem;
+    text-align: center;
+    border: 1px solid #999999;
+    border-left: none;
+}
+.theControlNum .ri{
+    float: left;
+    width: 3.4rem;
+    height: 3rem;
+    line-height: 2.7rem;
+    text-align: center;
+    border: 1px solid #999999;
+    border-left: none;
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    font-size: 2.5rem;
+}
+/*--------------------数量操作样式 end-----------------------*/
+.themePopCarCon .btnShow1,.themePopCarCon .btnShow2{
+    display: none;
+    margin: 0 1rem;
+    padding: 1rem 0;
+}
+.themePopCarCon .btnShow1 a{
+    display: block;
+    height: 3.2rem;
+    width: 100%;
+    background-color: #f05a0d;
+    text-align: center;
+    line-height: 3.2rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: #fff;
+}
+.themePopCarCon .btnShow2 a{
+    height: 3.2rem;
+    width: 45%;
+    text-align: center;
+    line-height: 3.2rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+.themePopCarCon .btnShow2 .a1{
+    float: left;
+    border: 1px solid #f05a0d;
+    background-color: #f05a0d;
+}
+.themePopCarCon .btnShow2 .a2{
+    float: right;
+    border: 1px solid #e4e4e4;
+    background-color: #fff;
+    color: #535353;
+}
+/*----------------------------------选择规格样式 end------------------------------------*/

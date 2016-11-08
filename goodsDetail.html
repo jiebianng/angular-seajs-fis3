@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="AppControl">
+<head lang="en">
+    <meta http-equiv="pragma" content="no-cache"  />
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>商品详情</title>
+</head>
+<body>
+<!--处理加载状态 start-->
+<div id="PageLoadingState" style="position: fixed;top: 0;left: 0;background-color: #fff;width: 100%;z-index: 99999999;text-align: center;">
+    <div style="display: table;width: 100%;height: 100%;">
+        <div style="display: table-cell;vertical-align: middle;">
+            <img src="Public/images/tj_all_loadfile.gif" alt="" width="30%"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var he = document.documentElement.clientHeight;//高
+    var _id = document.getElementById('PageLoadingState');
+    _id.style.height=he+'px';
+    document.onreadystatechange=function(){
+        if(document.readyState=='complete'){
+            document.getElementById('PageLoadingState').style.display='none';
+        }
+    }
+</script>
+<!--处理加载状态 end-->
+<!--头部返回-->
+<div class="All_TopHead">
+    <div class="headDIV">
+        <a href="index.html"><img src="Public/images/iconfont-back.png"></a>
+        <span>商品详情</span>
+    </div>
+</div>
+<!--头部返回 end-->
+<div>
+    <div class="r_xg" ng-repeat="obj in objs" finished1>
+        <div id="mtop">
+            <div id="maxDiv" style="padding-bottom: .2rem;border-bottom: 1px solid #f1f1f1;">
+                <div class="r_goods_detail_img">
+                    <div class="goodsPICS">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img err-src="Public/images/error.jpg" img-src="{{obj.object.goods.goodsImage1Url}}"></div>
+                                <div class="swiper-slide"><img err-src="Public/images/error.jpg" img-src="{{obj.object.goods.goodsImage2Url}}"></div>
+                                <div class="swiper-slide"><img err-src="Public/images/error.jpg" img-src="{{obj.object.goods.goodsImage3Url}}"></div>
+                                <div class="swiper-slide"><img err-src="Public/images/error.jpg" img-src="{{obj.object.goods.goodsImage4Url}}"></div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 1rem;position: relative;">
+                        <p class="r_goodsName">{{obj.object.goods.goodsName}}</p>
+                        <p class="r_goodsmrak">{{obj.object.goods.intro}}</p>
+                        <p id="r_shopJiage" style="float: left"><span class="r_goods_xianjia"></span><del class="r_goods_yuanjia"></del></p>
+                        <div class="r_goods_keepTrue">
+                            <img src="Public/images/keepStart.png">
+                            <span id="isKeep" style="vertical-align: middle">收藏</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="r_goodsDetail3">
+                <li><span class="r_goods_ty">产地</span><span  style="color: #979797">{{obj.object.goods.produceAddress}}</span></li>
+                <li><span class="r_goods_ty">规格</span>
+                    <span class="r_goodsGG" ng-repeat="gg in obj.object.spec" data-ggID="{{gg.id}}" data-qty="{{gg.qty}}" data-yuanjia="{{gg.originalPrice}}" data-xianjia="{{gg.price}}">{{gg.specification}}</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <span class="r_goods_ty">产品评价（<span class="shopPlNum">{{plNUM.rows.length}}</span>）</span>
+                            <span class="cpstart"></span>
+                            <span class="r_pay_shop_num r_goods_starsNum">{{obj.object.goods.evaluationGoodStar}}分</span>
+                            <img src="Public/images/JTright.png" class="r_cppjRightJT">
+                        </div>
+                    </a>
+                </li>
+                <li id="r_more" style="display: none;"><span class="r_goods_text_pic">点击查看图文详情</span><img src="Public/images/r_twxq.png"></li>
+            </ul>
+            <!--样式1-->
+            <!--<div class="r_goodsDetail4">-->
+            <!--<span class="r_goods_shopCar themePControlCar" style="float: left;" data-goodsid="{{goodsID}}">加入购物车</span>-->
+            <!--<span class="r_goods_shopCar themePControlBuy" data-goodsid="{{goodsID}}">立即购买</span>-->
+            <!--</div>-->
+            <!--样式2-->
+            <div class="r_goodsDetail4">
+                <img id="r_shopNumJian" src="Public/images/iconfont-shopNumJian2.png">
+                <span class="r_goodsNUm">1</span>
+                <img id="r_shopNumJia" src="Public/images/iconfont-shopNumJia2.png">
+                <span class="r_goods_shopCar SubmitBuy">立即购买</span>
+                <span class="r_goods_shopCar SubmitAdd" style="margin-right: 1rem;">加入购物车</span>
+            </div>
+
+            <div class="r_goodsDetail5" id="r_goodsDetail5">
+                <div class="goodsDetailImg" ng-bind-html="obj.object.goods.detailInfo | html"></div>
+                <div>
+                    <img id="backTop" src="Public/images/backTop.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--加载规格样式 start-->
+<div ng-include="'temp/tem_guige.html'"></div>
+<!--加载规格样式 end-->
+</body>
+<script type="text/javascript" src="Public/js/sea.js"></script>
+<script type="text/javascript" src="Public/js/seajs-css.js"></script>
+<script type="text/javascript" src="Public/js/config.js"></script>
+<script>
+    seajs.use(["swiper-css"]);
+    seajs.use("goodsDetails",function(temp){
+        temp.goodsDetails();
+    });
+</script>
+</html>

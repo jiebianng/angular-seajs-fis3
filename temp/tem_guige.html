@@ -1,0 +1,46 @@
+<!--规格操作 start-->
+<div class="themePopCar">
+    <div class="themePopCarCon">
+        <div class="goodsShow">
+            <div class="ta-cell">
+                <img err-src="Public/images/error.jpg" src="{{objGoodsImageUrl}}" alt="" style="height: 3rem;">
+            </div>
+            <div class="ta-cell wi-100">
+                <p class="p1">{{guigeObj.object.goods.goodsName}}</p>
+                <p class="p2"><span class="sp1">￥</span>{{objPrice}}</p>
+            </div>
+            <div class="ta-cell">
+                <img src="Public/images/iconfont-guanbi.png" alt="" style="height: 2.4rem;" class="closePop">
+            </div>
+        </div>
+        <div class="specShow">
+            <p>规格 :</p>
+            <ul class="specList">
+                <li data-goodsImageUrl="{{spec.goodsImageUrl}}" data-price="{{spec.price}}" data-GoodsInventoryId="{{spec.id}}" data-qty="{{spec.qty}}" data-goodsId="{{spec.goodsId}}" data-sellerId="{{guigeObj.object.goods.sellerId}}" ng-repeat="spec in guigeObj.object.spec" finished10>{{spec.specification}}</li>
+            </ul>
+        </div>
+        <div class="numberShow">
+            <div class="ta-cell wi-100 ta-le">
+                <p class="p1">数量 :</p>
+            </div>
+            <div class="ta-cell">
+                <div class="wh-now">剩余 : <span class="numCot"></span></div>
+            </div>
+            <div class="ta-cell ta-ri">
+                <div class="theControlNum clearfix">
+                    <div class="le">-</div>
+                    <div class="mi"><input type="text" value="1" class="input"></div>
+                    <div class="ri">+</div>
+                </div>
+            </div>
+        </div>
+        <div class="btnShow1">
+            <a href="javascript:void (0)" class="NextBtn">下一步</a>
+        </div>
+        <div class="btnShow2 clearfix">
+            <a href="javascript:void (0)" class="a1 BuyImmediatelyBtn">立即购买</a>
+            <a href="javascript:void (0)" class="a2 GoInCarBtn">加入购物车</a>
+        </div>
+    </div>
+</div>
+<!--规格操作 end-->

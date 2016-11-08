@@ -1,0 +1,22 @@
+<div class="l_sp">
+    <ul>
+        <li ng-repeat="obj in storegoods.rows" finished2 style="border-bottom: 1px solid rgba(207,201,193,1);">
+            <a href="goodsDetail.html?goodsID={{obj.id}}">
+                <div class="l_sptu">
+                    <img err-src="Public/images/error.jpg" img-src="{{obj.goodsImageUrl}}" alt=""/>
+                </div>
+            </a>
+            <div class="l_spmc">
+                <a href="goodsDetail.html?goodsID={{obj.id}}">
+                    <p>{{obj.goodsName}}</p>
+                    <p style="color: #999999;">{{obj.goodsUnit}}</p>
+                    <div style="border-top: 1px dotted rgba(252,226,198,1);padding-top: 1rem;">
+                        <span class="Smoney"><span class="Ssmell">￥</span>{{obj.goodsPrice}}</span>
+                        <span class="StMoney" style="font-style: normal;font-size: 1.2rem;color: rgba(171,171,171,1);">/￥{{obj.goodsOriginalPrice}}</span>
+                    </div>
+                </a>
+                <a href="javascript:void (0)" class="app_Code themePControlIndex" data-goodsid="{{obj.id}}"><img alt="" src="Public/images/addShopCarImg.png" style="height: 2.5rem;width: auto;vertical-align: bottom;  float: none;"></a>
+            </div>
+        </li>
+    </ul>
+</div>

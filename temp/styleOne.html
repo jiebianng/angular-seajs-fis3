@@ -1,0 +1,20 @@
+<div class="l_sp">
+    <ul>
+        <li ng-repeat="obj in storegoods.rows" finished2>
+            <a href="goodsDetail.html?goodsID={{obj.id}}">
+                <div class="l_sptu">
+                    <img err-src="Public/images/error.jpg" img-src="{{obj.goodsImageUrl}}" alt=""/>
+                </div>
+            </a>
+            <div class="l_spmc">
+                <a href="goodsDetail.html?goodsID={{obj.id}}">
+                    <p>{{obj.goodsName}}</p>
+                    <p style="color: #999999;">{{obj.goodsUnit}}</p>
+                    <span class="Smoney"><span class="Ssmell">￥</span>{{obj.goodsPrice}}</span>
+                    <span class="StMoney">￥{{obj.goodsOriginalPrice}}</span>
+                </a>
+                <a href="javascript:void (0)" class="app_Code themePControlIndex" data-goodsid="{{obj.id}}"><img alt="" src="Public/images/addShopCarImg.png" style="height: 2.5rem;width: auto;vertical-align: bottom;  float: none;"></a>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="pragma" content="no-cache"  />
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="color_body" ng-app="myApp" ng-controller="AppControl">
+<!--处理加载状态 start-->
+<div id="PageLoadingState" style="position: fixed;top: 0;left: 0;background-color: #fff;width: 100%;height:100%;z-index: 99999999;text-align: center;">
+    <div style="display: table;width: 100%;height: 100%;">
+        <div style="display: table-cell;vertical-align: middle;">
+            <img src="Public/images/tj_all_loadfile.gif" alt="" width="30%"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.onreadystatechange=function(){
+        if(document.readyState=='complete'){
+            document.getElementById('PageLoadingState').style.display='none';
+        }
+    }
+</script>
+<!--处理加载状态 end-->
+
+<!--头部返回-->
+<div class="All_TopHead">
+    <div class="headDIV">
+        <a href="index.html"><img src="Public/images/iconfont-back.png"></a>
+        <span>购物车</span>
+        <span class="r_clickEdit" id="cartEdit">编辑</span>
+    </div>
+</div>
+<!--头部返回 end-->
+
+<!--正文 start-->
+   <div class="r_shopCarDiv">
+       <ul class="r_gwcUl" id="shopCartUl">
+           <li class="shopList" data-qty="{{obj1.qty}}" data-shopCarID="{{obj1.id}}" data-goodsPrice="{{obj1.goodsPrice}}" ng-repeat="obj1 in objs.rows" finished1>
+               <img class="r_shopPic" err-src="Public/images/error.jpg" img-src="{{obj1.goodsImagUrl}}">
+               <div class="r_shopDetail">
+                   <p ng-bind="obj1.goodsName"></p>
+                   <p class="r_shopGG" ng-bind="obj1.attributeDescription"></p>
+                   <p class="r_jisge"><span class="r_xianjia" ng-bind="obj1.goodsPrice|currency:'￥'"></span></p>
+               </div>
+               <div class="r_shopCarNum">
+                   <div class="r_edit">
+                       <div><img class="r_shopDel shopDel" data-shopCarID="{{obj1.id}}" data-goodsPrice="{{obj1.goodsPrice}}" src="Public/images/iconfont_shopDel.png"></div>
+                        <div class="r_shopEditImg" data-qty="{{obj1.qty}}" data-shopCarID="{{obj1.id}}" data-jiage="{{obj1.goodsPrice}}">
+                            <img class="r_shopNumJian shopNumJian" src="Public/images/iconfont-shopNumJian2.png">
+                            <span class="r_shopX">x</span><span class="r_shopNUm shopNum" ng-bind="obj1.goodsNum"></span>
+                            <img class="r_shopNumJia shopNumJia"  src="Public/images/iconfont-shopNumJia2.png">
+                        </div>
+                   </div>
+               </div>
+           </li>
+       </ul>
+   </div>
+
+<!--正文 end-->
+<!--shopCarFooter-->
+<div class="r_shopCarFooterDiv">
+    <div class="r_shopBottomDivLeft">
+        <p>￥<span class="shopPrice"></span></p>
+    </div>
+    <div style="position: absolute;height: 100%;top: 0;right: 1rem">
+        <div style="display: table;width: 100%;height: 100%">
+            <div class="r_shopBottomDivRight" id="submitOrder" style="display: table-cell;vertical-align: middle">
+                <span>提交订单</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--shopCarFooter-->
+<script type="text/javascript" src="Public/js/sea.js"></script>
+<script type="text/javascript" src="Public/js/seajs-css.js"></script>
+<script type="text/javascript" src="Public/js/config.js"></script>
+<script>
+    seajs.use("ShopCart",function(temp){
+        temp.shopCarEdit();
+    });
+</script>
+</body>
+</html>

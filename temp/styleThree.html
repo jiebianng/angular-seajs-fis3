@@ -1,0 +1,15 @@
+<div class="l_ysr_tu">
+    <div class="l_ysr_tu1" ng-repeat="obj in storegoods.rows" finished2>
+        <a href="goodsDetail.html?goodsID={{obj.id}}">
+            <div class="l_ysr_tu2">
+                <img err-src="Public/images/error.jpg" img-src="{{obj.goodsImageUrl}}" alt=""/>
+            </div>
+            <div class="l_ysr_tu3">
+                <h4>{{obj.goodsName}}</h4>
+                <span class="Smoney"><span class="Ssmell">￥</span>{{obj.goodsPrice}}</span>
+                <span class="StMoney">￥{{obj.goodsOriginalPrice}}</span>
+            </div>
+        </a>
+        <a href="javascript:void (0)" class="app_Code themePControlIndex" data-goodsid="{{obj.id}}" style="bottom: .5rem;"><img alt="" src="Public/images/iconfont-goumai.png" style="height: 2rem;width: auto;vertical-align: bottom;  float: none;"></a>
+    </div>
+</div>

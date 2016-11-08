@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta http-equiv="pragma" content="no-cache"  />
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta charset="UTF-8">
+    <title>最近浏览</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body class="color_body" ng-app="myApp" ng-controller="AppControl">
+<!--处理加载状态 start-->
+<div id="PageLoadingState" style="position: fixed;top: 0;left: 0;background-color: #fff;width: 100%;z-index: 99999999;text-align: center;">
+    <div style="display: table;width: 100%;height: 100%;">
+        <div style="display: table-cell;vertical-align: middle;">
+            <img src="../Public/images/tj_all_loadfile.gif" alt="" width="30%"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var he = document.documentElement.clientHeight;//高
+    var _id = document.getElementById('PageLoadingState');
+    _id.style.height=he+'px';
+    document.onreadystatechange=function(){
+        if(document.readyState=='complete'){
+            document.getElementById('PageLoadingState').style.display='none';
+        }
+    }
+</script>
+<!--处理加载状态 end-->
+
+<!--头部返回-->
+<div class="All_TopHead">
+    <div class="headDIV">
+        <a href="personal.html"><img src="Public/images/iconfont-back.png"></a>
+        <span>最近浏览</span>
+    </div>
+</div>
+<!--头部返回 end-->
+
+<!--正文 start-->
+<div class="r_shopCarDiv" style="padding-bottom: 0;">
+    <ul>
+        <li ng-repeat="shop in zuijinData">
+            <a href="goodsDetail.html?goodsID={{shop.id}}">
+                <div class="goodsDetail" style="float: left;height: 100%">
+                    <img class="r_shopPic" err-src="Public/images/error.jpg" img-src="{{shop.goodsImageUrl}}">
+                    <div class="r_shopDetail" style="width:auto;">
+                        <p>{{shop.goodsName}}</p>
+                        <p class="r_shopGG">{{shop.intro}}</p>
+                        <p class="r_jisge"><span class="r_xianjia">￥{{shop.goodsPrice}}</span>&nbsp;&nbsp;<span class="r_yuanjia">￥{{shop.goodsOriginalPrice}}</span></p>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--正文 end-->
+<script type="text/javascript" src="Public/js/sea.js"></script>
+<script type="text/javascript" src="Public/js/seajs-css.js"></script>
+<script type="text/javascript" src="Public/js/config.js"></script>
+<script>
+    seajs.use("myKeep",function(temp){
+        temp.zuijinliulan();
+    });
+</script>
+</body>
+</html>

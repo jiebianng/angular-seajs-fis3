@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="myApp" ng-controller="AppControl">
+<head>
+    <meta http-equiv="pragma" content="no-cache"  />
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <title></title>
+    <!-- Basic Page Needs
+     ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="Copyright" content="">
+    <!-- <meta name="description" content=""> -->
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <!-- IOS6全屏 Chrome高版本全屏
+    ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- 让360双核浏览器用webkit内核渲染页面
+    ================================================== -->
+    <meta name="renderer" content="webkit">
+    <!-- Mobile Specific Metass
+    ================================================== -->
+    <!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body style="width:100%;height: 1000px;">
+<!--处理加载状态 start-->
+<div id="PageLoadingState" style="position: fixed;top: 0;left: 0;background-color: #fff;width: 100%;height:100%;z-index: 99999999;text-align: center;">
+    <div style="display: table;width: 100%;height: 100%;">
+        <div style="display: table-cell;vertical-align: middle;">
+            <img src="Public/images/tj_all_loadfile.gif" alt="" width="30%"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.onreadystatechange=function(){
+        if(document.readyState=='complete'){
+            document.getElementById('PageLoadingState').style.display='none';
+        }
+    }
+</script>
+<!--处理加载状态 end-->
+<a href="javascript:void (0)" class="themePControlIndex" data-goodsId="77">我是首页按钮</a><br/>
+<a href="javascript:void (0)" class="themePControlBuy" data-goodsId="78">我是立即购买按钮</a><br/>
+<a href="javascript:void (0)" class="themePControlCar" data-goodsId="78">我是加入购物车按钮</a><br/>
+<!--规格操作 start-->
+<div class="themePopCar">
+    <div class="themePopCarCon">
+        <div class="goodsShow">
+            <div class="ta-cell">
+                <img src="{{objGoodsImageUrl}}" alt="" style="height: 3rem;">
+            </div>
+            <div class="ta-cell wi-100">
+                <p class="p1">{{guigeObj.object.goods.goodsName}}</p>
+                <p class="p2"><span class="sp1">￥</span>{{objPrice}}</p>
+            </div>
+            <div class="ta-cell">
+                <img src="Public/images/iconfont-guanbi.png" alt="" style="height: 2.4rem;" class="closePop">
+            </div>
+        </div>
+        <div class="specShow">
+            <p>规格 :</p>
+            <ul class="specList">
+                <li data-goodsImageUrl="{{spec.goodsImageUrl}}" data-price="{{spec.price}}" data-GoodsInventoryId="{{spec.id}}" data-qty="{{spec.qty}}" data-goodsId="{{spec.goodsId}}" data-sellerId="{{guigeObj.object.goods.sellerId}}" ng-repeat="spec in guigeObj.object.spec" finished1>{{spec.goodsUnit}}</li>
+            </ul>
+        </div>
+        <div class="numberShow">
+            <div class="ta-cell wi-100 ta-le">
+                <p class="p1">数量 :</p>
+            </div>
+            <div class="ta-cell">
+                <div class="wh-now">剩余 : <span class="numCot"></span></div>
+            </div>
+            <div class="ta-cell ta-ri">
+                <div class="theControlNum clearfix">
+                    <div class="le">-</div>
+                    <div class="mi"><input type="text" value="1" class="input"></div>
+                    <div class="ri">+</div>
+                </div>
+            </div>
+        </div>
+        <div class="btnShow1">
+            <a href="javascript:void (0)" class="NextBtn">下一步</a>
+        </div>
+        <div class="btnShow2 clearfix">
+            <a href="javascript:void (0)" class="a1 BuyImmediatelyBtn">立即购买</a>
+            <a href="javascript:void (0)" class="a2 GoInCarBtn">加入购物车</a>
+        </div>
+    </div>
+</div>
+<!--规格操作 end-->
+<!--默认收货地址 start-->
+<div class="TAddressTemplate">
+    <div class="TeTop openTeGoIn">
+        <div class="ta-cell va-mi">
+            <p  class="wi-30"><img src="Public/images/iconfont-dingwei.png" alt="" style="width:2.5rem;"/></p>
+        </div>
+        <div class="ta-cell wi-1000">
+            <div class="addRC">
+                <p class="p1"><span ng-bind="DefCh"></span><span ng-bind="DefAdds.consignee"></span><span class="fr" ng-bind="DefAdds.telPhone"></span></p>
+                <p class="p2">{{DefAdds.province}}{{DefAdds.city}}{{DefAdds.area}}{{DefAdds.address}}</p>
+            </div>
+        </div>
+        <div class="ta-cell va-mi">
+            <p  class="wi-30"><img src="Public/images/iconfont-jinru.png" alt="" style="width:2.5rem;"/></p>
+        </div>
+    </div>
+    <div class="TeGoIn">
+        <!--地址列表 start-->
+        <div class="AdList">
+            <div class="checkAddBtn bb-1">
+                <div class="ta-cell wi-1000">
+                    <div class="addRC te-ce">
+                        <p class="p3">选择收货地址</p>
+                    </div>
+                </div>
+                <div class="ta-cell va-mi">
+                    <p  class="wi-30">
+                        <img class="ChooseGoIn" src="Public/images/iconfont-guanbi.png" alt="" style="width:2.6rem;" id="closeChooseAddress"/>
+                    </p>
+                </div>
+            </div>
+            <ul class="ul">
+                <li ng-repeat="Add in AddLists" finished1 data-id="{{Add.id}}" data-consignee="{{Add.consignee}}" data-telPhone="{{Add.telPhone}}" data-address="{{Add.address}}"
+                    data-province="{{Add.province}}" data-city="{{Add.city}}" data-area="{{Add.area}}" data-postcode="{{Add.postcode}}">
+                    <div class="ta-cell va-mi">
+                        <a href="javascript:void (0)" class="addressChoose active{{Add.isDefault}}"></a>
+                    </div>
+                    <div class="ta-cell wi-1000">
+                        <div class="addRC">
+                            <p class="p1">收货人: <span ng-bind="Add.consignee"></span><span class="fr" ng-bind="Add.telPhone"></span></p>
+                            <p class="p2">{{Add.province}}{{Add.city}}{{Add.area}}{{Add.address}}</p>
+                        </div>
+                    </div>
+                    <div class="ta-cell va-mi">
+                        <p  class="wi-30">
+                            <img class="ChooseGoIn goInUpAd" src="Public/images/iconfont-xiugai.png" alt="" style="width:2.5rem;"/>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="checkAddBtn" id="AddressAdd">
+                <div class="ta-cell va-mi">
+                    <img class="ChooseGoIn" src="Public/images/iconfont-xinzeng.png" alt="" style="width:2.1rem;margin-left: 1rem;"/>
+                </div>
+                <div class="ta-cell wi-1000 va-mi">
+                    <div class="addRC">
+                        <p class="p1">新增地址</p>
+                    </div>
+                </div>
+                <div class="ta-cell va-mi">
+                    <p  class="wi-30">
+                        <img class="ChooseGoIn" src="Public/images/iconfont-jinru.png" alt="" style="width:2.5rem;"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--地址列表 end-->
+        <!--添加或修改地址 start-->
+        <div class="updateAddressPopup">
+            <div class="checkAddBtn bb-1">
+                <div class="ta-cell wi-1000">
+                    <div class="addRC te-ce">
+                        <p class="p3">收货地址</p>
+                    </div>
+                </div>
+                <div class="ta-cell va-mi">
+                    <p  class="wi-30">
+                        <img class="ChooseGoIn" src="Public/images/iconfont-guanbi.png" alt="" style="width:2.6rem;" id="closeUpdateAddress"/>
+                    </p>
+                </div>
+            </div>
+            <ul class="upAdPoCon">
+                <li>
+                    <label>姓名</label>
+                    <input type="text" id="checkName"/>
+                </li>
+                <li>
+                    <label>手机号</label>
+                    <input type="text" id="checkPhone"/>
+                </li>
+                <li class="page">
+                    <label>所在地区</label>
+                    <input type="text" placeholder="" id="city-picker">
+                </li>
+                <li>
+                    <label>收货地址</label>
+                    <input type="text" id="checkAddress"/>
+                </li>
+            </ul>
+            <div class="AddressBtn">
+                <a class="AddLeBtn AdBtClDel">删除</a>
+                <a class="AddRiBtn AdBtClSea">保存</a>
+            </div>
+        </div>
+        <!--添加或修改地址 end-->
+    </div>
+</div>
+<!--默认收货地址 end-->
+<!--加载更多 start-->
+{{mains}}
+<!--加载更多 end-->
+<script type="text/javascript" src="Public/js/sea.js"></script>
+<script type="text/javascript" src="Public/js/seajs-css.js"></script>
+<script type="text/javascript" src="Public/js/config.js"></script>
+<script type="text/javascript">
+	seajs.use("sm-css");
+    seajs.use("tem",function(temp){
+        temp.GoData(1);
+    });
+</script>
+</body>
